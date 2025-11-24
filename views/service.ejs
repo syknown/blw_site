@@ -4,6 +4,27 @@
 <head>
     <meta charset="utf-8">
     <%- include('partials/header') %>
+        <style>
+            .initiatives h2 {
+                font-weight: 700;
+            }
+
+            .accordion-button {
+                background-color: #eafaf1;
+                color: #2a7a3f;
+                font-weight: 600;
+            }
+
+            .accordion-button:not(.collapsed) {
+                background-color: #2a7a3f;
+                color: #fff;
+            }
+
+            .accordion-body ul {
+                list-style: disc;
+                margin-left: 20px;
+            }
+        </style>
 
 </head>
 
@@ -148,6 +169,114 @@
                     </div>
                 </div>
                 <!-- Service End -->
+                <section class="initiatives container py-5">
+                    <div class="text-center mb-5">
+                        <h2 class="display-4 text-success">Our Initiatives</h2>
+                        <p class="fs-5 text-muted">What We Do</p>
+                    </div>
+
+                    <div class="accordion" id="initiativesAccordion">
+                        <% initiatives.initiatives.forEach((initiative, index)=> { %>
+                            <div class="accordion-item mb-3">
+                                <h2 class="accordion-header" id="heading<%= index %>">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse<%= index %>" aria-expanded="false"
+                                        aria-controls="collapse<%= index %>">
+                                        <%= index + 1 %>. <%= initiative.title %>
+                                    </button>
+                                </h2>
+                                <div id="collapse<%= index %>" class="accordion-collapse collapse"
+                                    aria-labelledby="heading<%= index %>" data-bs-parent="#initiativesAccordion">
+                                    <div class="accordion-body">
+                                        <p class="fw-bold">
+                                            <%= initiative.subtitle %>
+                                        </p>
+
+                                        <% if(initiative.howWeDoIt && initiative.howWeDoIt.length) { %>
+                                            <h5>How We Do It</h5>
+                                            <ul>
+                                                <% initiative.howWeDoIt.forEach(item=> { %>
+                                                    <li>
+                                                        <%= item %>
+                                                    </li>
+                                                    <% }) %>
+                                            </ul>
+                                            <% } %>
+
+                                                <% if(initiative.benefitsToFarmers &&
+                                                    initiative.benefitsToFarmers.length) { %>
+                                                    <h5>Benefits to Farmers</h5>
+                                                    <ul>
+                                                        <% initiative.benefitsToFarmers.forEach(item=> { %>
+                                                            <li>
+                                                                <%= item %>
+                                                            </li>
+                                                            <% }) %>
+                                                    </ul>
+                                                    <% } %>
+
+                                                        <% if(initiative.benefitsToEconomy &&
+                                                            initiative.benefitsToEconomy.length) { %>
+                                                            <h5>Community & Economy Impact</h5>
+                                                            <ul>
+                                                                <% initiative.benefitsToEconomy.forEach(item=> { %>
+                                                                    <li>
+                                                                        <%= item %>
+                                                                    </li>
+                                                                    <% }) %>
+                                                            </ul>
+                                                            <% } %>
+
+                                                                <% if (Array.isArray(initiative.employmentCreation) &&
+                                                                    initiative.employmentCreation.length) { %>
+                                                                    <h5>Employment Creation</h5>
+                                                                    <ul>
+                                                                        <% initiative.employmentCreation.forEach(item=>
+                                                                            { %>
+                                                                            <li>
+                                                                                <%= item %>
+                                                                            </li>
+                                                                            <% }) %>
+                                                                    </ul>
+                                                                    <% } %>
+
+
+                                                                        <% if
+                                                                            (Array.isArray(initiative.revenueForFarmers)
+                                                                            && initiative.revenueForFarmers.length) { %>
+                                                                            <h5>Revenue for Farmers</h5>
+                                                                            <ul>
+                                                                                <%
+                                                                                    initiative.revenueForFarmers.forEach(item=>
+                                                                                    { %>
+                                                                                    <li>
+                                                                                        <%= item %>
+                                                                                    </li>
+                                                                                    <% }) %>
+                                                                            </ul>
+                                                                            <% } %>
+
+                                                                                <% if(Array.isArray(initiative.benefitsToDonors)
+                                                                                    &&
+                                                                                    initiative.benefitsToDonors.length)
+                                                                                    { %>
+                                                                                    <h5>Benefits to Donors</h5>
+                                                                                    <ul>
+                                                                                        <%
+                                                                                            initiative.benefitsToDonors.forEach(item=>
+                                                                                            { %>
+                                                                                            <li>
+                                                                                                <%= item %>
+                                                                                            </li>
+                                                                                            <% }) %>
+                                                                                    </ul>
+                                                                                    <% } %>
+                                    </div>
+                                </div>
+                            </div>
+                            <% }) %>
+                    </div>
+                </section>
 
                 <%- include('partials/footer') %>
 </body>

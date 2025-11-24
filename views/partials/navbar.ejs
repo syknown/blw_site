@@ -8,12 +8,18 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <a href="/" class="nav-item nav-link active">Home</a>
-            <a href="/about" class="nav-item nav-link">About</a>
-            <a href="/services" class="nav-item nav-link">Initiatives</a>
-            <a href="/projects" class="nav-item nav-link">Projects</a>
+            <a href="/" class="nav-item nav-link <%= currentRoute === '/' ? 'active' : '' %>">Home</a>
+            <a href="/about" class="nav-item nav-link <%= currentRoute === '/about' ? 'active' : '' %>">About</a>
+            <a href="/services"
+                class="nav-item nav-link <%= currentRoute === '/services' ? 'active' : '' %>">Initiatives</a>
+
+            <a href="/projects"
+                class="nav-item nav-link <%= currentRoute === '/projects' ? 'active' : '' %>">Projects</a>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdowsn-toggle" data-bs-toggle="dropdown">Our Impact</a>
+                <a href="#" class="nav-link dropdown-toggle <%= 
+                    ['/feature','/quote','/team','/testimonial'].includes(currentRoute) 
+                    ? 'active' : '' %>" data-bs-toggle="dropdown">
+                    Our Impact</a>
                 <div class="dropdown-menu bg-light m-0">
                     <a href="/feature" class="dropdown-item">Features</a>
                     <a href="/quote" class="dropdown-item">Free Quote</a>
