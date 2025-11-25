@@ -19,10 +19,23 @@
                     <a href="/#mission" class="dropdown-item">Our Mission</a>
                     <a href="/#vision" class="dropdown-item">Our Vision</a>
                     <a href="/#ourvalues" class="dropdown-item">Our Values</a>
-                    
+
                 </div>
             </div>
-            <a href="/about" class="nav-item nav-link <%= currentRoute === '/about' ? 'active' : '' %>">About</a>
+            <!-- <a href="/about" class="nav-item nav-link <%= currentRoute === '/about' ? 'active' : '' %>">About</a> -->
+            <div class="nav-item dropdown">
+                <a href="/about" class="nav-link dropdown-toggle <%= 
+                    ['/about','/about#overview','/about#ourstory','/about#leadership'].includes(currentRoute) 
+                    ? 'active' : '' %>" data-bs-toggle="dropdown">
+                    About</a>
+                <div class="dropdown-menu bg-light m-0">
+                    <a href="/about#overview" class="dropdown-item">Overview</a>
+                    <a href="/about#ourstory" class="dropdown-item">Our Story</a>
+                    <a href="/about#leadership" class="dropdown-item">Leadership</a>
+                    <a href="/about#partnership" class="dropdown-item">Partnership</a>
+
+                </div>
+            </div>
             <a href="/services"
                 class="nav-item nav-link <%= currentRoute === '/services' ? 'active' : '' %>">Initiatives</a>
 
