@@ -4,9 +4,10 @@ const path = require('path');
 const app = express();
 const initiatives = require('./data/initiatives.json');
 const projects = require('./data/projects.json')
+const { Job, OurTeam, ContactUs, Application, OurPartners, MembershipRequest, Publication, Newsletter, AnnualReports, ShortCourseApplication } = require("./models");
 require("dotenv").config();
 
-var adminRouter = require('./routes/admin') 
+var adminRouter = require('./routes/admin')
 const { sequelize } = require("./models");
 // sequelize.sync().then(() => console.log("✅ DB Synced"));
 sequelize
@@ -59,9 +60,22 @@ app.get('/feature', (req, res) => {
 app.get('/quote', (req, res) => {
   res.render('quote', { title: "Get a quote" });
 });
-app.get('/team', (req, res) => {
-  res.render('team', { title: "Our Team" });
+app.get('/team', async (req, res) => {
+  try {
+    const team = await OurTeam.findAll({ raw: true });
+
+    console.log("Team:", team); // You're already doing this
+
+    res.render("team", {
+      title: "Our Team",
+      team
+    });
+  } catch (error) {
+    console.error("Failed to load team:", error);
+    res.status(500).send("Internal Server Error");
+  }
 });
+
 app.get('/testimonial', (req, res) => {
   res.render('team', { title: "Testimonial" });
 });

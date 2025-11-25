@@ -36,11 +36,30 @@
 
                 </div>
             </div>
-            <a href="/services"
-                class="nav-item nav-link <%= currentRoute === '/services' ? 'active' : '' %>">Initiatives</a>
+            <div class="nav-item dropdown">
+                <a href="/services"
+                class=" nav-link dropdown-toggle <%= currentRoute === '/services' ? 'active' : '' %>">Initiatives</a>
+                
+                <div class="dropdown-menu bg-light m-0">
+                    <a href="/services#whatwedo" class="dropdown-item">What We Do</a>
+                    <a href="/services#priorities" class="dropdown-item">Our Priorities</a>
+                    
 
-            <a href="/projects"
-                class="nav-item nav-link <%= currentRoute === '/projects' ? 'active' : '' %>">Projects</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="/projects"
+                class="dropdown-toggle nav-link <%= currentRoute === '/projects' ? 'active' : '' %>">Projects</a>
+                
+                
+                <div class="dropdown-menu bg-light m-0">
+                    <a href="/projects#ongoing" class="dropdown-item">Ongoing Projects</a>
+                    <a href="/projects#pastprojects" class="dropdown-item">Our Past Projects</a>
+                    
+
+                </div>
+            </div>
+            
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle <%= 
                     ['/feature','/quote','/team','/testimonial'].includes(currentRoute) 

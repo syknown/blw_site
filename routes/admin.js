@@ -367,7 +367,7 @@ router.post("/team", upload.single("image"), async (req, res) => {
     try {
         console.log("Received team member data:", req.body, req.file);
         const { fullName, role } = req.body;
-        const imageUrl = req.file ? `/team/${req.file.filename}` : null;
+        const imageUrl = req.file ? `/uploads/${req.file.filename}` : null;
         await OurTeam.create({ fullName, role, imageUrl });
         res.redirect("/admin");
 
