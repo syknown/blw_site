@@ -4,73 +4,551 @@
 <head>
     <meta charset="utf-8">
     <%- include('partials/header') %>
-
 </head>
 
 <body>
     <%- include('partials/spinner') %>
         <%- include('partials/topbar') %>
             <%- include('partials/navbar') %>
+
                 <!-- Page Header Start -->
                 <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
                     <div class="container text-center py-5">
-                        <h1 class="display-3 text-white mb-4 animated slideInDown">Free Quote</h1>
+                        <h1 class="display-3 text-white mb-4 animated slideInDown">Get Involved</h1>
                         <nav aria-label="breadcrumb animated slideInDown">
                             <ol class="breadcrumb justify-content-center mb-0">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                                 <li class="breadcrumb-item"><a href="#">Our Impact</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Free Quote</li>
+                                <li class="breadcrumb-item active" aria-current="page">Get Involved</li>
                             </ol>
                         </nav>
                     </div>
                 </div>
                 <!-- Page Header End -->
 
+                <!-- Donate Section -->
 
-                <!-- Quote Start -->
-                <div class="container-fluid py-5">
-                    <div class="container">
-                        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                            <p class="fs-5 fw-bold text-primary">Free Quote</p>
-                            <h1 class="display-5 mb-5">Get A Free Quote</h1>
+                <section id="donate" class="container py-5">
+
+                    <div class="text-center mb-5">
+                        <h2 class="fw-bold">Join Us in Building Resilient Futures</h2>
+                        <p>Every donation, big or small, brings us closer to a world where farmers thrive,
+                            families eat better, and communities grow stronger.</p>
+                        <p>Together, we can build sustainable livelihoods, protect the environment, and uplift the
+                            next generation of farmers.</p>
+                    </div>
+
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-md-4">
+                            <div class="card h-100 shadow-sm border-0 text-center p-3">
+                                <h5 class="fw-bold">KES 1,000</h5>
+                                <p>A household receives drought-resistant seeds.</p>
+                            </div>
                         </div>
-                        <div class="row justify-content-center">
-                            <div class="col-lg-7">
-                                <div class="bg-light rounded p-4 p-sm-5 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="col-md-4">
+                            <div class="card h-100 shadow-sm border-0 text-center p-3">
+                                <h5 class="fw-bold">KES 5,000</h5>
+                                <p>A farmer receives training in climate-smart agriculture.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 shadow-sm border-0 text-center p-3">
+                                <h5 class="fw-bold">KES 20,000</h5>
+                                <p>Youth trained in drone and agri-tech skills.</p>
+                            </div>
+                        </div>
+                        <!-- Add more tiers if needed -->
+                    </div>
+
+                    <div class="row justify-content-center mt-4">
+                        <div class="col-lg-6">
+                            <form class="bg-light rounded p-4 shadow-sm" action="/donate" method="POST">
+                                <h4 class="mb-4 text-center">Make a Donation</h4>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" name="name" placeholder="Full Name"
+                                        required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="email" class="form-control" name="email" placeholder="Email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="number" class="form-control" name="amount"
+                                        placeholder="Donation Amount (KES)" required>
+                                </div>
+                                <div class="mb-3">
+                                    <textarea class="form-control" name="message" placeholder="Message (Optional)"
+                                        rows="3"></textarea>
+                                </div>
+                                <div class="text-center">
+                                    <button class="btn btn-primary px-5" type="submit">Donate Now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sponsor a Farmer Section -->
+                <section id="sponsorafarmer" class="container py-5 bg-light">
+                    <div class="text-center mb-5">
+                        <h2 class="fw-bold display-5">Sponsor a Farmer</h2>
+                        <p class="lead">Empower a farmer. Transform a family. Strengthen a community.
+                            Your sponsorship provides tools, training, and technologies to help farmers
+                            escape poverty, increase productivity, and build resilient livelihoods.</p>
+                    </div>
+
+                    <!-- Why Sponsor - Card Layout -->
+                    <div class="row g-4 mb-5">
+                        <div class="col-md-4">
+                            <div class="card h-100 shadow-sm border-0 p-4 text-center hover-scale">
+                                <i class="bi bi-tools fs-1 text-primary mb-3"></i>
+                                <h5 class="fw-bold">Smart Tools</h5>
+                                <p>Provide farmers with the tools needed for modern, efficient agriculture.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 shadow-sm border-0 p-4 text-center hover-scale">
+                                <i class="bi bi-cloud-sun fs-1 text-success mb-3"></i>
+                                <h5 class="fw-bold">Climate Resilience</h5>
+                                <p>Help farmers adopt climate-smart technologies and practices.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 shadow-sm border-0 p-4 text-center hover-scale">
+                                <i class="bi bi-people fs-1 text-warning mb-3"></i>
+                                <h5 class="fw-bold">Training & Markets</h5>
+                                <p>Support professional training and access to markets and cooperatives.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Levels of Sponsorship -->
+                    <div class="row g-4 mb-5">
+                        <div class="col-md-6">
+                            <div class="card shadow-sm border-0 p-4 hover-scale">
+                                <h5 class="fw-bold">Seed Starter</h5>
+                                <p><strong>KES 3,000 / $25 per month:</strong> Basic training & seeds</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card shadow-sm border-0 p-4 hover-scale">
+                                <h5 class="fw-bold">Growth Sponsor</h5>
+                                <p><strong>KES 8,000 / $65 per month:</strong> Training, digital tools & cooperatives
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card shadow-sm border-0 p-4 hover-scale">
+                                <h5 class="fw-bold">Climate Champion</h5>
+                                <p><strong>KES 20,000 / $160 per month:</strong> Climate-smart tech</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card shadow-sm border-0 p-4 hover-scale">
+                                <h5 class="fw-bold">Full Farm Transformation</h5>
+                                <p><strong>KES 150,000 / $1,200 one-time:</strong> Full farmer support</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card shadow-sm border-0 p-4 hover-scale">
+                                <h5 class="fw-bold">Sponsor a Farming Household</h5>
+                                <p><strong>KES 300,000 / $2,500 one-time:</strong> Household-level support</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sponsor Benefits -->
+                    <div class="row justify-content-center mb-5">
+                        <div class="col-lg-10">
+                            <div class="bg-white rounded shadow-sm p-4 p-sm-5">
+                                <h5 class="fw-bold mb-3">What You Receive as a Sponsor</h5>
+                                <p>We believe in transparency and engagement. As a sponsor, you will receive:</p>
+                                <ul class="list-unstyled mb-0">
+                                    <li>✔ A welcome pack introducing you to the farmer you are supporting</li>
+                                    <li>✔ Quarterly progress updates with stories, photos, and data</li>
+                                    <li>✔ Impact reports showing measurable change</li>
+                                    <li>✔ Opportunities to visit the project site (optional)</li>
+                                    <li>✔ Recognition as a partner in building sustainable livelihoods</li>
+                                    <li>✔ Your support becomes part of their success story</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Sponsorship Form -->
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="bg-white rounded shadow-sm p-4 p-sm-5">
+                                <h4 class="mb-4 text-center fw-bold">Become a Sponsor Today</h4>
+                                <form>
                                     <div class="row g-3">
                                         <div class="col-sm-6">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="gname"
-                                                    placeholder="Gurdian Name">
+                                                <input type="text" class="form-control border-0" id="sponsorName"
+                                                    placeholder="Your Name">
+                                                <label for="sponsorName">Your Name</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-floating">
+                                                <input type="email" class="form-control border-0" id="sponsorEmail"
+                                                    placeholder="Your Email">
+                                                <label for="sponsorEmail">Your Email</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-floating">
+                                                <select class="form-select border-0" id="sponsorLevel"
+                                                    aria-label="Select Sponsorship Level">
+                                                    <option selected>Choose a Sponsorship Level</option>
+                                                    <option value="seed">Seed Starter</option>
+                                                    <option value="growth">Growth Sponsor</option>
+                                                    <option value="climate">Climate Champion</option>
+                                                    <option value="full">Full Farm Transformation</option>
+                                                    <option value="household">Sponsor a Farming Household</option>
+                                                </select>
+                                                <label for="sponsorLevel">Sponsorship Level</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-floating">
+                                                <textarea class="form-control border-0" placeholder="Leave a message"
+                                                    id="sponsorMessage" style="height: 100px"></textarea>
+                                                <label for="sponsorMessage">Message</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 text-center">
+                                            <button class="btn btn-success btn-lg" type="submit">Sponsor Now</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <style>
+                    .hover-scale:hover {
+                        transform: translateY(-5px) scale(1.03);
+                        transition: transform 0.3s;
+                    }
+                </style>
+
+
+                <!-- Partner With Us Section -->
+                <section id="partnerwithus" class="container py-5 bg-light">
+                    <div class="text-center mb-5">
+                        <h2 class="fw-bold">Partner With Us</h2>
+                        <p class="lead">Together, we can transform agriculture, strengthen rural economies, and build
+                            sustainable futures.</p>
+                        <p>At Building Lives for Sustainable Project (BLSP), meaningful change happens when communities,
+                            organizations, and institutions join hands with a shared vision. By partnering with us, you
+                            become part of a mission to empower farmers, advance climate-smart agriculture, and create
+                            long-lasting impact for families across Kenya and beyond. Whether you are a donor, corporate
+                            partner, NGO, government agency, research institution, or community organization — your
+                            collaboration accelerates the growth of resilient food systems and sustainable livelihoods.
+                        </p>
+                    </div>
+
+                    <!-- Why Partner With BLSP -->
+                    <div class="row g-4 justify-content-center mb-5">
+                        <div class="col-lg-10">
+                            <h4 class="fw-bold mb-3">Why Partner With BLSP?</h4>
+                            <ul class="list-unstyled">
+                                <li>✓ <strong>Proven Impact Model:</strong> Our programs are designed around practical
+                                    training, innovation, market access, climate resilience, and community empowerment —
+                                    delivering measurable and sustainable outcomes.</li>
+                                <li>✓ <strong>Strong Alignment with National & Global Priorities:</strong> Our work
+                                    directly supports:
+                                    <ul>
+                                        <li>Government of Kenya agricultural transformation strategies</li>
+                                        <li>Climate resilience and environmental restoration priorities</li>
+                                        <li>Global development frameworks, including SDGs 1, 2, 8, 9, 12, and 13</li>
+                                    </ul>
+                                </li>
+                                <li>✓ <strong>Community-Driven Approaches:</strong> We collaborate with local leaders,
+                                    farmers, cooperatives, and youth groups to ensure our interventions address real
+                                    needs and deliver tangible benefits.</li>
+                                <li>✓ <strong>Scalable & Replicable Solutions:</strong> From smart farming to agri-tech,
+                                    from nutrition programs to cooperative empowerment — our initiatives can scale
+                                    across counties and regions.</li>
+                                <li>✓ <strong>Transparency & Accountability:</strong> We provide clear reporting,
+                                    monitoring, and continuous evaluation to ensure every partnership creates measurable
+                                    impact.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Ways You Can Partner -->
+                    <div class="row g-4 justify-content-center mb-5">
+                        <div class="col-lg-10">
+                            <h4 class="fw-bold mb-3">Ways You Can Partner With Us</h4>
+                            <ol>
+                                <li><strong>Financial Support & Grant Funding</strong>
+                                    <p>Support our agricultural programs, capacity building, green initiatives,
+                                        technology deployment, or food security projects.</p>
+                                    <ul>
+                                        <li>Sponsor greenhouses or solar irrigation systems</li>
+                                        <li>Fund farmers' training and demonstration farms</li>
+                                        <li>Support school feeding and nutrition programs</li>
+                                        <li>Invest in community tree planting and agroforestry</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Corporate CSR Partnerships</strong>
+                                    <p>We partner with businesses to implement high-impact CSR programs that align with
+                                        their values — especially in:</p>
+                                    <ul>
+                                        <li>Agriculture and food security</li>
+                                        <li>Youth empowerment</li>
+                                        <li>Technology and digital inclusion</li>
+                                        <li>Environmental conservation</li>
+                                        <li>Women economic empowerment</li>
+                                    </ul>
+                                    <p>Your CSR investment can change entire communities.</p>
+                                </li>
+                                <li><strong>Strategic & Technical Partnerships</strong>
+                                    <p>Collaborate with us on:</p>
+                                    <ul>
+                                        <li>Agricultural research</li>
+                                        <li>Technology innovation (drones, sensors, solar solutions)</li>
+                                        <li>Digital tools and smart farming platforms</li>
+                                        <li>Capacity building and training modules</li>
+                                        <li>Agribusiness development and value addition</li>
+                                    </ul>
+                                    <p>Partner institutions can include universities, tech companies, government
+                                        agencies, and NGOs.</p>
+                                </li>
+                                <li><strong>Market Access & Value Chain Partnerships</strong>
+                                    <p>Work with us to connect farmers to:</p>
+                                    <ul>
+                                        <li>Buyers</li>
+                                        <li>Processors</li>
+                                        <li>Export markets</li>
+                                        <li>Manufacturers</li>
+                                        <li>Retailers</li>
+                                    </ul>
+                                    <p>Partners help unlock fair prices and stable market demand.</p>
+                                </li>
+                                <li><strong>Equipment, Tools & Technology Donations</strong>
+                                    <p>Support farmers with:</p>
+                                    <ul>
+                                        <li>Greenhouses</li>
+                                        <li>Drip irrigation kits</li>
+                                        <li>Solar pumps</li>
+                                        <li>Drones</li>
+                                        <li>Processing tools</li>
+                                        <li>Seeds & inputs</li>
+                                        <li>Storage equipment</li>
+                                    </ul>
+                                    <p>These tools create immediate and lasting transformation.</p>
+                                </li>
+                                <li><strong>Volunteer & Capacity-Building Engagement</strong>
+                                    <p>Professionals and institutions can contribute through:</p>
+                                    <ul>
+                                        <li>Training sessions</li>
+                                        <li>Field demonstrations</li>
+                                        <li>Mentorship for cooperatives</li>
+                                        <li>Research collaborations</li>
+                                    </ul>
+                                    <p>Your skills can uplift entire communities.</p>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- Areas of Partnership -->
+                    <div class="row g-4 justify-content-center mb-5">
+                        <div class="col-lg-10">
+                            <h4 class="fw-bold mb-3">Areas of Partnership Across Our Six Initiatives</h4>
+                            <ul>
+                                <li><strong>Smart Farming Initiative:</strong> Partner with us to deliver climate-smart
+                                    agriculture, digital tools, and hands-on farmer training.</li>
+                                <li><strong>Agro-Innovation & Technology Initiative:</strong> Collaborate in advancing
+                                    drones, solar irrigation, and agri-tech research.</li>
+                                <li><strong>Food Security & Nutrition Initiative:</strong> Support school feeding, grain
+                                    banks, and nutrition programs.</li>
+                                <li><strong>Farmers’ Empowerment & Cooperative Initiative:</strong> Join us in building
+                                    strong farmer cooperatives and enhancing financial literacy.</li>
+                                <li><strong>Sustainable Livelihoods & Green Communities Initiative:</strong> Work with
+                                    us on tree planting, renewable energy, organic farming, and climate resilience.</li>
+                                <li><strong>Agribusiness & Market Access Initiative:</strong> Partner to strengthen
+                                    value addition, processing, packaging, and export linkages.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Benefits of Partnering -->
+                    <div class="row g-4 justify-content-center mb-5">
+                        <div class="col-lg-10">
+                            <h4 class="fw-bold mb-3">Benefits of Partnering with BLSP</h4>
+                            <ul>
+                                <li><strong>For Corporates:</strong> Enhanced CSR visibility, strong brand positioning
+                                    in sustainability and community impact, opportunities for employee engagement</li>
+                                <li><strong>For Donors:</strong> Clear impact metrics and reporting, alignment with
+                                    global development goals, scalable, high-return social investments</li>
+                                <li><strong>For Government:</strong> Increased agricultural productivity, improved food
+                                    security, strengthened rural economies, higher tax revenues from formalized
+                                    agribusiness</li>
+                                <li><strong>For Communities:</strong> Better livelihoods, more opportunities for women
+                                    and youth, enhanced resilience to climate change</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Collaboration Form -->
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="bg-white rounded shadow-sm p-4 p-sm-5">
+                                <h4 class="fw-bold mb-4 text-center">Collaborate With Us</h4>
+                                <form>
+                                    <div class="row g-3">
+                                        <div class="col-sm-6">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control border-0" id="orgname"
+                                                    placeholder="Organization Name">
+                                                <label for="orgname">Organization Name</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-floating">
+                                                <input type="email" class="form-control border-0" id="orgemail"
+                                                    placeholder="Email">
+                                                <label for="orgemail">Email</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control border-0" id="contactperson"
+                                                    placeholder="Contact Person">
+                                                <label for="contactperson">Contact Person</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-floating">
+                                                <textarea class="form-control border-0" id="message"
+                                                    placeholder="Tell us about your partnership interest"
+                                                    style="height:120px;"></textarea>
+                                                <label for="message">Message</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 text-center mt-3">
+                                            <button type="submit" class="btn btn-primary btn-lg">Submit Partnership
+                                                Request</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- Careers/Jobs Section -->
+                <section id="jobs" class="container py-5 bg-light">
+                    <div class="text-center mb-5">
+                        <h2 class="fw-bold">Careers at BLSP</h2>
+                        <p>Join us in transforming agriculture and empowering communities.</p>
+                    </div>
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-lg-10">
+                            <h5>Why Work With Us?</h5>
+                            <ul>
+                                <li>Meaningful impact in communities</li>
+                                <li>Innovation & technology in agriculture</li>
+                                <li>Community-driven work</li>
+                                <li>Inclusive & supportive culture</li>
+                                <li>Professional growth opportunities</li>
+                            </ul>
+
+                            <h5>Job Categories</h5>
+                            <ul>
+                                <li>Agriculture & Field Operations</li>
+                                <li>Agro-Innovation & Technology</li>
+                                <li>Food Security & Nutrition</li>
+                                <li>Cooperative & Community Empowerment</li>
+                                <li>Sustainability & Environmental Management</li>
+                                <li>Agribusiness & Market Access</li>
+                                <li>Administration, Finance & Operations</li>
+                                <li>Volunteer & Internship Opportunities</li>
+                            </ul>
+
+                            <div class="text-center mt-4">
+                                <a href="/careers" class="btn btn-success btn-lg me-2">Join Our Talent Pool</a>
+                                <a href="/submit-cv" class="btn btn-outline-success btn-lg">Submit Your CV</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FAQ Section -->
+                <section id="faqs" class="container py-5">
+                    <div class="text-center mb-5">
+                        <h2 class="fw-bold">Frequently Asked Questions</h2>
+                        <p>Everything you need to know about BLSP</p>
+                    </div>
+
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq1">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse1" aria-expanded="true">
+                                    What is BLSP?
+                                </button>
+                            </h2>
+                            <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    BLSP (Building Lives for Sustainable Project) is a nonprofit organization
+                                    transforming agriculture, empowering farmers, and uplifting rural communities.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Repeat more FAQ items for all the questions -->
+                    </div>
+                </section>
+
+                <!-- Free Quote Form Section -->
+                <section id="freequote" class="container py-5 bg-light">
+                    <div class="text-center mx-auto mb-5" style="max-width: 500px;">
+                        <p class="fs-5 fw-bold text-primary">Free Quote</p>
+                        <h1 class="display-5 mb-5">Get A Free Quote</h1>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-7">
+                            <div class="bg-white rounded p-4 p-sm-5 shadow-sm">
+                                <form>
+                                    <div class="row g-3">
+                                        <div class="col-sm-6">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="gname"
+                                                    placeholder="Your Name">
                                                 <label for="gname">Your Name</label>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-floating">
-                                                <input type="email" class="form-control border-0" id="gmail"
-                                                    placeholder="Gurdian Email">
+                                                <input type="email" class="form-control" id="gmail"
+                                                    placeholder="Your Email">
                                                 <label for="gmail">Your Email</label>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="cname"
-                                                    placeholder="Child Name">
+                                                <input type="text" class="form-control" id="cname"
+                                                    placeholder="Your Mobile">
                                                 <label for="cname">Your Mobile</label>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="cage"
-                                                    placeholder="Child Age">
+                                                <input type="text" class="form-control" id="cage"
+                                                    placeholder="Service Type">
                                                 <label for="cage">Service Type</label>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-floating">
-                                                <textarea class="form-control border-0"
-                                                    placeholder="Leave a message here" id="message"
-                                                    style="height: 100px"></textarea>
+                                                <textarea class="form-control" id="message"
+                                                    placeholder="Leave a message here" style="height: 100px"></textarea>
                                                 <label for="message">Message</label>
                                             </div>
                                         </div>
@@ -78,11 +556,11 @@
                                             <button class="btn btn-primary py-3 px-4" type="submit">Submit Now</button>
                                         </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
 
                 <%- include('partials/footer') %>
 </body>

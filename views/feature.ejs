@@ -4,160 +4,584 @@
 <head>
     <meta charset="utf-8">
     <%- include('partials/header') %>
-
 </head>
 
 <body>
     <%- include('partials/spinner') %>
         <%- include('partials/topbar') %>
             <%- include('partials/navbar') %>
+
+                <!-- Page Header Start -->
                 <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
                     <div class="container text-center py-5">
-                        <h1 class="display-3 text-white mb-4 animated slideInDown">Features</h1>
+                        <h1 class="display-3 text-white mb-4 animated slideInDown">Our Impact</h1>
                         <nav aria-label="breadcrumb animated slideInDown">
                             <ol class="breadcrumb justify-content-center mb-0">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                                 <li class="breadcrumb-item"><a href="#">Our Impact</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Features</li>
+                                <li class="breadcrumb-item active" aria-current="page">Overview</li>
                             </ol>
                         </nav>
                     </div>
                 </div>
                 <!-- Page Header End -->
 
+                <!-- Overview Start -->
+                <section id="overview" class="container py-5">
+                    <div class="text-center mb-5">
+                        <h2 class="display-5 fw-bold">Impact Summary</h2>
+                        <p>BLSP’s past projects have empowered thousands of farmers, generated sustainable
+                            incomes, strengthened local food systems, and fostered environmental stewardship.
+                            These achievements lay the foundation for ongoing and future initiatives, ensuring
+                            lasting prosperity for communities and generations to come.</p>
+                    </div>
+                </section>
+                <!-- Overview End -->
 
-                <!-- Feature Start -->
-                <div class="container-fluid py-5">
-                    <div class="container">
-                        <div class="row gx-0">
-                            <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
-                                <div class="bg-white shadow d-flex align-items-center h-100 px-5"
-                                    style="min-height: 160px;">
-                                    <div class="d-flex">
-                                        <div class="flex-shrink-0 btn-lg-square rounded-circle bg-light">
-                                            <i class="fa fa-times text-primary"></i>
-                                        </div>
-                                        <div class="ps-3">
-                                            <h4>No Hidden Cost</h4>
-                                            <span>Clita erat ipsum lorem sit sed stet duo justo</span>
-                                        </div>
+                <!-- Impact Stories Start -->
+                <section id="stories" class="container py-5 bg-light">
+                    <div class="text-center mb-5">
+                        <h2 class="display-5 fw-bold">Impact Stories</h2>
+                        <p>At Building Lives for Sustainable Project (BLSP), our work goes beyond programs
+                            and initiatives—it changes lives. Through smart farming solutions, innovative
+                            technologies, and community empowerment, we have helped thousands of farmers,
+                            families, and rural communities thrive. Here are some of their stories:</p>
+                    </div>
+                    <div class="row g-4">
+                        <!-- Sarah's Greenhouse -->
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="card h-100 shadow">
+                                <div class="card-body">
+                                    <h4 class="card-title">Sarah’s Greenhouse Revolution</h4>
+                                    <p><strong>Location:</strong> Kisumu County</p>
+                                    <p>Sarah, a small-scale vegetable farmer, struggled with unpredictable rains and
+                                        low yields. Through BLSP’s Smart Farming Initiative, she received training in
+                                        climate-smart agriculture and access to a greenhouse and drip irrigation system.
+                                    </p>
+                                    <ul>
+                                        <li>Her vegetable yields increased by 50%, providing surplus for sale.</li>
+                                        <li> Household income doubled, enabling her children to attend school regularly.
+                                        </li>
+                                        <li>Sarah now trains other women farmers in her community, spreading sustainable
+                                            practices.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Daniel's Agro-Tech -->
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="card h-100 shadow">
+                                <div class="card-body">
+                                    <h4 class="card-title">Daniel’s Agro-Tech Journey</h4>
+                                    <p><strong>Location:</strong> Machakos County</p>
+                                    <p>Daniel, a young farmer, lacked access to modern agricultural tools. BLSP’s
+                                        Agro-Innovation & Technology Initiative introduced him to solar irrigation and
+                                        drone-assisted crop monitoring.</p>
+                                    <ul>
+                                        <li>Reduced water usage by 40% while increasing crop quality.</li>
+                                        <li>Daniel started a local drone service for nearby farms, creating jobs for two
+                                            youth.</li>
+                                        <li>His produce now meets high-value market standards, increasing profitability.
+
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="card h-100 shadow">
+                                <div class="card-body">
+                                    <h4 class="card-title">Esther’s Food Security Success</h4>
+                                    <p><strong>Location:</strong> Kitui County</p>
+                                    <p> Esther’s family faced frequent food shortages due to poor storage and drought.
+                                        Through BLSP’s Food Security & Nutrition Initiative, she learned about grain
+                                        banks, drought-resistant crops, and kitchen gardening.</p>
+                                    <ul>
+                                        <li>Household food security improved year-round.</li>
+                                        <li>Post-harvest losses reduced by 30%, increasing income.</li>
+                                        <li>Esther became a community nutrition champion, teaching neighbors how to grow
+                                            nutritious crops.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="card h-100 shadow">
+                                <div class="card-body">
+                                    <h4 class="card-title">Farmers’ Cooperative Triumph</h4>
+                                    <p><strong>Location:</strong> Meru County</p>
+                                    <p> A group of 25 farmers struggled to compete with middlemen. BLSP’s
+                                        Farmers’ Empowerment & Cooperative Initiative helped them form a cooperative,
+                                        access microfinance, and improve governance.</p>
+                                    <ul>
+                                        <li>Collective bargaining increased crop prices by 40%.
+                                        <li>Access to credit enabled members to invest in farm equipment.</li>
+                                        <li>The cooperative now serves as a model for neighboring communities.</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="card h-100 shadow">
+                                <div class="card-body">
+                                    <h4 class="card-title">Green Communities Champion</h4>
+                                    <p><strong>Location:</strong> Embu County</p>
+                                    <p> Community members faced soil degradation and environmental challenges.
+                                        BLSP’s Sustainable Livelihoods & Green Communities Initiative introduced
+                                        agroforestry, organic farming, and renewable energy solutions.</p>
+                                    <ul>
+                                        <li>20,000 trees planted, restoring local ecosystems.
+                                        <li>Organic produce sold at premium prices, creating new income streams.</li>
+                                        <li>Community members adopted sustainable practices, improving resilience to
+                                            climate change.</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="card h-100 shadow">
+                                <div class="card-body">
+                                    <h4 class="card-title">Agribusiness Transformation</h4>
+                                    <p><strong>Location:</strong> Embu County</p>
+                                    <p> Farmers struggled to access markets and increase revenue. BLSP’s
+                                        Agribusiness & Market Access Initiative trained them in value addition,
+                                        packaging,
+                                        and market linkages.</p>
+                                    <ul>
+                                        <li>Farmers started producing juices, flour, and dried fruits, increasing
+                                            revenue by
+                                            35%.</li>
+                                        <li>Access to regional and international markets reduced exploitation by
+                                            middlemen.</li>
+                                        <li>Employment opportunities created in processing and transport, boosting the
+                                            local
+                                            economy.
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+                <!-- Impact Stories End -->
+
+                <!-- Measuring Impact Start -->
+                <section id="measuring" class="container py-5">
+                    <div class="text-center mb-5">
+                        <h2 class="display-5 fw-bold">Measuring Impact</h2>
+                        <p>At Building Lives for Sustainable Project (BLSP), impact is at the heart of everything
+                            we do. We measure success not only by the number of farmers we reach, but by the
+                            real, lasting transformation in productivity, incomes, resilience, and community
+                            well-being. Our Monitoring, Evaluation, Accountability, and Learning (MEAL)
+                            approach ensures that every program we implement delivers meaningful change and
+                            contributes to sustainable development. </p>
+                        <p> Our impact measurement system is designed to be data-driven, inclusive, and
+                            transparent, enabling us to track progress, improve program quality, and
+                            demonstrate results to our partners, donors, and communities.</p>
+                    </div>
+
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <h5>1. Farmer Productivity & Yield Improvement</h5>
+                            <p>We evaluate how our training, technologies, and farming innovations increase farmers’
+                                production capacity.</p>
+                            <ul>
+                                <li>Percentage increase in crop yield per acre</li>
+                                <li>Adoption rate of climate-smart and digital farming practices</li>
+                                <li>Reduction in post-harvest losses</li>
+                                <li>Increased crop quality and consistency</li>
+                            </ul>
+                            <hr>
+                            <h5>3. Food Security & Nutrition Levels</h5>
+                            <p>We track how our initiatives strengthen access to nutritious and stable food supplies.
+                            </p>
+                            <ul>
+                                <li>Reduction in hunger periods and food shortages</li>
+                                <li>Increased household consumption of nutritious foods</li>
+                                <li>Grain banks, kitchen gardens, and improved seeds</li>
+                                <li>Improvement in child and maternal nutrition outcomes</li>
+                            </ul>
+                            <hr>
+                        </div>
+                        <div class="col-lg-6">
+                            <h5>2. Income Growth & Economic Empowerment</h5>
+                            <p>We assess how BLSP programs improve household income and economic stability.</p>
+                            <ul>
+                                <li>Increase in farmer earnings from produce sales</li>
+                                <li>Access to new markets and value chains</li>
+                                <li>Financial literacy and cooperative savings growth</li>
+                                <li>Farmers transitioning to formal agri-business operations</li>
+                            </ul>
+                            <hr>
+                            <h5>4. Technology Adoption & Innovation Uptake</h5>
+                            <p>We measure the impact of modern agricultural technologies introduced to farmers.</p>
+                            <ul>
+                                <li>Use of solar irrigation, drones, and digital tools</li>
+                                <li>Cost savings from energy and water efficiency</li>
+                                <li>Youth participation in agri-tech innovations</li>
+                                <li>Improved pest/disease detection and monitoring</li>
+                            </ul>
+                            <hr>
+                        </div>
+                        <div class="col-lg-6">
+                            <h5>5. Cooperative Strength & Community Empowerment</h5>
+                            <p>We evaluate how organized farmer groups drive economic and social advancement.</p>
+                            <ul>
+                                <li>Number of active cooperatives established or strengthened</li>
+                                <li>Improved cooperative governance and financial management</li>
+                                <li>Access to credit, subsidies, and formal markets</li>
+                                <li>Collective bargaining gains (better prices, lower input costs)</li>
+                                </li>
+
+                            </ul>
+                            <hr>
+
+                            <h5>7. Value Addition, Market Access & Agribusiness Growth</h5>
+                            <p>We measure how farmers generate higher earnings through processing, packaging,
+                                and direct marketing.</p>
+                            <ul>
+                                <li>Number of farmers trained in agribusiness management
+                                <li>Volume and value of processed products (flour, juice, dried fruits etc.)</li>
+                                <li>Market linkages facilitated: buyers, processors, exporters</li>
+                                <li>Increase in market prices and sales volumes</li>
+
+                            </ul>
+                            <hr>
+                        </div>
+                        <div class="col-lg-6">
+                            <h5>6. Environmental Sustainability & Climate Resilience</h5>
+                            <p>BLSP tracks how community-led environmental actions contribute to long-term
+                                resilience.</p>
+                            <ul>
+                                <li>Number of trees planted and agroforestry systems established</li>
+                                <li>Soil health and biodiversity improvements</li>
+                                <li>Households using renewable energy and eco-friendly farming</li>
+                                <li>Reduction in carbon footprint and increased participation in carbon markets</li>
+                            </ul>
+                            <hr>
+
+                            <h5>8. Community-Level Outcomes</h5>
+                            <p>Beyond individual farmers, we evaluate how entire communities benefit from BLSP
+                                programs</p>
+                            <ul>
+                                <li>Employment generated through green jobs, agri-tech, processing and
+                                    cooperatives</li>
+                                <li>Strengthened local economies and reduced rural poverty</li>
+                                <li>Increased resilience to droughts, climate shocks, and economic disruptions</li>
+                                <li>Improved household well-being: education, health, and food stability</li>
+
+                            </ul>
+                            <hr>
+                        </div>
+                    </div>
+
+                </section>
+                <section id="tools" class="container py-5">
+                    <div class="text-center mb-5">
+                        <h2 class="display-5 fw-bold">Our Tools & Approach</h2>
+                        <p class="fs-5 text-muted">BLSP uses a comprehensive Monitoring and Evaluation (M&E) framework
+                            to track impact:</p>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="card-body d-flex align-items-start">
+                                    <div class="btn-square bg-primary text-white rounded-circle me-3"
+                                        style="width:50px; height:50px; display:flex; align-items:center; justify-content:center;">
+                                        <i class="fa fa-search"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="card-title">Surveys</h5>
+                                        <p class="card-text">Baseline, midline, and endline surveys to measure program
+                                            outcomes and progress.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
-                                <div class="bg-white shadow d-flex align-items-center h-100 px-5"
-                                    style="min-height: 160px;">
-                                    <div class="d-flex">
-                                        <div class="flex-shrink-0 btn-lg-square rounded-circle bg-light">
-                                            <i class="fa fa-users text-primary"></i>
-                                        </div>
-                                        <div class="ps-3">
-                                            <h4>Dedicated Team</h4>
-                                            <span>Clita erat ipsum lorem sit sed stet duo justo</span>
-                                        </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="card-body d-flex align-items-start">
+                                    <div class="btn-square bg-primary text-white rounded-circle me-3"
+                                        style="width:50px; height:50px; display:flex; align-items:center; justify-content:center;">
+                                        <i class="fa fa-map"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="card-title">GIS & Drone Data</h5>
+                                        <p class="card-text">Mapping and drone technologies for real-time, accurate
+                                            monitoring of agricultural sites.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 wow fadeIn" data-wow-delay="0.5s">
-                                <div class="bg-white shadow d-flex align-items-center h-100 px-5"
-                                    style="min-height: 160px;">
-                                    <div class="d-flex">
-                                        <div class="flex-shrink-0 btn-lg-square rounded-circle bg-light">
-                                            <i class="fa fa-phone text-primary"></i>
-                                        </div>
-                                        <div class="ps-3">
-                                            <h4>24/7 Available</h4>
-                                            <span>Clita erat ipsum lorem sit sed stet duo justo</span>
-                                        </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="card-body d-flex align-items-start">
+                                    <div class="btn-square bg-primary text-white rounded-circle me-3"
+                                        style="width:50px; height:50px; display:flex; align-items:center; justify-content:center;">
+                                        <i class="fa fa-users"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="card-title">Community Feedback</h5>
+                                        <p class="card-text">Farmer feedback systems, community consultations, and
+                                            stakeholder reviews ensure transparency and learning.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="card-body d-flex align-items-start">
+                                    <div class="btn-square bg-primary text-white rounded-circle me-3"
+                                        style="width:50px; height:50px; display:flex; align-items:center; justify-content:center;">
+                                        <i class="fa fa-mobile-alt"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="card-title">Digital Record-Keeping</h5>
+                                        <p class="card-text">Mobile data collection and digital dashboards keep track of
+                                            progress efficiently.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.9s">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="card-body d-flex align-items-start">
+                                    <div class="btn-square bg-primary text-white rounded-circle me-3"
+                                        style="width:50px; height:50px; display:flex; align-items:center; justify-content:center;">
+                                        <i class="fa fa-check-circle"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="card-title">Transparency Reporting</h5>
+                                        <p class="card-text">Regular reporting ensures every stakeholder is informed
+                                            about results and impact.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- Feature End -->
+                    <p class="fs-5 text-muted">This ensures accurate, timely, and actionable insights for improving our
+                        interventions
+                        and scaling what works.</p>
+                </section>
 
+                <!-- Measuring Impact End -->
 
-                <!-- Facts Start -->
-                <div class="container-fluid facts my-5 py-5" data-parallax="scroll" data-image-src="img/carousel-1.jpg">
-                    <div class="container py-5">
-                        <div class="row g-5">
-                            <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
-                                <h1 class="display-4 text-white" data-toggle="counter-up">1234</h1>
-                                <span class="fs-5 fw-semi-bold text-light">Happy Clients</span>
-                            </div>
-                            <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
-                                <h1 class="display-4 text-white" data-toggle="counter-up">1234</h1>
-                                <span class="fs-5 fw-semi-bold text-light">Garden Complated</span>
-                            </div>
-                            <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
-                                <h1 class="display-4 text-white" data-toggle="counter-up">1234</h1>
-                                <span class="fs-5 fw-semi-bold text-light">Dedicated Staff</span>
-                            </div>
-                            <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
-                                <h1 class="display-4 text-white" data-toggle="counter-up">1234</h1>
-                                <span class="fs-5 fw-semi-bold text-light">Awards Achieved</span>
+                <!-- Social Impact Start -->
+                <section id="socialimpact" class="container py-5 bg-light">
+                    <div class="text-center mb-5">
+                        <h2 class="display-5 fw-bold">Our Commitment to Social Transformation</h2>
+                        <p class="fs-5 text-muted">
+                            BLSP is committed to honesty, data-driven learning, and continuous improvement. Every
+                            greenhouse installed, every tree planted, every farmer trained, and every market opened
+                            builds a future where rural communities thrive sustainably.
+                        </p>
+                    </div>
+
+                    <div class="text-center mb-5">
+                        <h3 class="fw-bold">How BLSP Transforms Communities</h3>
+                        <p class="text-muted">Our initiatives drive meaningful change for farmers, families, and rural
+                            communities.</p>
+                    </div>
+
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="card-body">
+                                    <h5 class="card-title">Empowering Farmers With Knowledge & Opportunity</h5>
+                                    <ul>
+                                        <li>Increased agricultural productivity</li>
+                                        <li>Higher and more stable incomes</li>
+                                        <li>Improved decision-making through digital and climate-smart tools</li>
+                                        <li>Reduced vulnerability to climate shocks</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <!-- Facts End -->
 
-
-                <!-- Features Start -->
-                <div class="container-xxl py-5">
-                    <div class="container">
-                        <div class="row g-5 align-items-center">
-                            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                                <p class="fs-5 fw-bold text-primary">Why Choosing Us!</p>
-                                <h1 class="display-5 mb-4">Few Reasons Why People Choosing Us!</h1>
-                                <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam
-                                    amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo
-                                    justo magna dolore erat amet</p>
-                                <a class="btn btn-primary py-3 px-4" href="">Explore More</a>
+                        <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="card-body">
+                                    <h5 class="card-title">Strengthening Food Security for Families</h5>
+                                    <ul>
+                                        <li>Increased availability of nutritious, affordable food</li>
+                                        <li>Reduced malnutrition and hunger cycles</li>
+                                        <li>Grain banks and kitchen gardens that sustain families year-round</li>
+                                        <li>Stronger school attendance and performance</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="row g-4 align-items-center">
-                                    <div class="col-md-6">
-                                        <div class="row g-4">
-                                            <div class="col-12 wow fadeIn" data-wow-delay="0.3s">
-                                                <div class="text-center rounded py-5 px-4"
-                                                    style="box-shadow: 0 0 45px rgba(0,0,0,.08);">
-                                                    <div class="btn-square bg-light rounded-circle mx-auto mb-4"
-                                                        style="width: 90px; height: 90px;">
-                                                        <i class="fa fa-check fa-3x text-primary"></i>
-                                                    </div>
-                                                    <h4 class="mb-0">100% Satisfaction</h4>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 wow fadeIn" data-wow-delay="0.5s">
-                                                <div class="text-center rounded py-5 px-4"
-                                                    style="box-shadow: 0 0 45px rgba(0,0,0,.08);">
-                                                    <div class="btn-square bg-light rounded-circle mx-auto mb-4"
-                                                        style="width: 90px; height: 90px;">
-                                                        <i class="fa fa-users fa-3x text-primary"></i>
-                                                    </div>
-                                                    <h4 class="mb-0">Dedicated Team</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 wow fadeIn" data-wow-delay="0.7s">
-                                        <div class="text-center rounded py-5 px-4"
-                                            style="box-shadow: 0 0 45px rgba(0,0,0,.08);">
-                                            <div class="btn-square bg-light rounded-circle mx-auto mb-4"
-                                                style="width: 90px; height: 90px;">
-                                                <i class="fa fa-tools fa-3x text-primary"></i>
-                                            </div>
-                                            <h4 class="mb-0">Modern Equipment</h4>
-                                        </div>
-                                    </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="card-body">
+                                    <h5 class="card-title">Creating Economic Opportunities & Rural Employment</h5>
+                                    <ul>
+                                        <li>Jobs in agri-tech, greenhouse construction, and processing</li>
+                                        <li>Youth empowered through technology and innovation</li>
+                                        <li>Growth of local agribusiness, cooperatives, and value-addition</li>
+                                        <li>Increased household incomes and participation in local economies</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.7s">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="card-body">
+                                    <h5 class="card-title">Supporting Women, Youth & Marginalized Groups</h5>
+                                    <ul>
+                                        <li>Women gain leadership roles in cooperatives and agribusiness</li>
+                                        <li>Youth trained in technology, innovation, and entrepreneurship</li>
+                                        <li>Vulnerable households receive targeted support</li>
+                                        <li>Increased inclusion in decision-making processes</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.9s">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="card-body">
+                                    <h5 class="card-title">Building Green, Sustainable, Climate-Resilient Communities
+                                    </h5>
+                                    <ul>
+                                        <li>Thousands of trees planted to restore landscapes</li>
+                                        <li>Reduced soil erosion and improved soil health</li>
+                                        <li>Adoption of clean energy and organic farming</li>
+                                        <li>Increased resilience to climate shocks</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="1.1s">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="card-body">
+                                    <h5 class="card-title">Strengthening Cooperatives & Community Governance</h5>
+                                    <ul>
+                                        <li>Well-governed cooperatives with transparent leadership</li>
+                                        <li>Improved access to credit and premium markets</li>
+                                        <li>Collective bargaining power boosts incomes</li>
+                                        <li>Stronger social cohesion and community trust</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="1.3s">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="card-body">
+                                    <h5 class="card-title">Expanding Market Access & Increasing Farmer Profits</h5>
+                                    <ul>
+                                        <li>Direct access to buyers, processors, and exporters</li>
+                                        <li>Higher prices through branding, processing, and packaging</li>
+                                        <li>Reduced post-harvest losses and waste</li>
+                                        <li>Stronger rural economies driven by agribusiness</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- Features End -->
+                </section>
+                <section id="donate" class="container py-5 bg-primary text-white">
+                    <div class="text-center mb-5">
+                        <h2 class="fw-bold">Donate to Transform Lives</h2>
+                        <p class="fs-5">
+                            Every donation becomes a seed of hope—empowering farmers, strengthening rural communities,
+                            and building climate-resilient futures.
+                        </p>
+                    </div>
+
+                    <div class="row g-4">
+                        <!-- Donation Tiers -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card bg-light text-dark h-100 shadow-sm border-0">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title fw-bold">KES 1,000</h5>
+                                    <p class="card-text">A household receives drought-resistant seeds.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card bg-light text-dark h-100 shadow-sm border-0">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title fw-bold">KES 5,000</h5>
+                                    <p class="card-text">A farmer receives training in climate-smart agriculture.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card bg-light text-dark h-100 shadow-sm border-0">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title fw-bold">KES 20,000</h5>
+                                    <p class="card-text">Youth trained in drone and agri-tech skills.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card bg-light text-dark h-100 shadow-sm border-0">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title fw-bold">KES 50,000</h5>
+                                    <p class="card-text">A school receives support for nutrition or feeding program.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card bg-light text-dark h-100 shadow-sm border-0">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title fw-bold">KES 150,000+</h5>
+                                    <p class="card-text">A community gets a greenhouse or solar irrigation system.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Donation Form -->
+                    <div class="row justify-content-center mt-5">
+                        <div class="col-lg-6">
+                            <div class="card bg-white text-dark shadow-sm border-0 p-4">
+                                <h4 class="mb-4 text-center">Make a Donation</h4>
+                                <form action="/donate" method="POST">
+                                    <div class="mb-3">
+                                        <label for="donorName" class="form-label">Full Name</label>
+                                        <input type="text" class="form-control" id="donorName" name="donorName"
+                                            required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="donorEmail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="donorEmail" name="donorEmail"
+                                            required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="donationAmount" class="form-label">Donation Amount (KES)</label>
+                                        <input type="number" class="form-control" id="donationAmount"
+                                            name="donationAmount" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="donorMessage" class="form-label">Message (Optional)</label>
+                                        <textarea class="form-control" id="donorMessage" name="donorMessage"
+                                            rows="3"></textarea>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-primary px-5">Donate Now</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Reports / Donations CTA End -->
 
                 <%- include('partials/footer') %>
 </body>

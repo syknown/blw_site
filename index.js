@@ -63,9 +63,6 @@ app.get('/quote', (req, res) => {
 app.get('/team', async (req, res) => {
   try {
     const team = await OurTeam.findAll({ raw: true });
-
-    console.log("Team:", team); // You're already doing this
-
     res.render("team", {
       title: "Our Team",
       team

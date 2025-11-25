@@ -38,41 +38,48 @@
             </div>
             <div class="nav-item dropdown">
                 <a href="/services"
-                class=" nav-link dropdown-toggle <%= currentRoute === '/services' ? 'active' : '' %>">Initiatives</a>
-                
+                    class=" nav-link dropdown-toggle <%= currentRoute === '/services' ? 'active' : '' %>">Initiatives</a>
+
                 <div class="dropdown-menu bg-light m-0">
                     <a href="/services#whatwedo" class="dropdown-item">What We Do</a>
                     <a href="/services#priorities" class="dropdown-item">Our Priorities</a>
-                    
-
                 </div>
             </div>
             <div class="nav-item dropdown">
                 <a href="/projects"
-                class="dropdown-toggle nav-link <%= currentRoute === '/projects' ? 'active' : '' %>">Projects</a>
-                
-                
+                    class="dropdown-toggle nav-link <%= currentRoute === '/projects' ? 'active' : '' %>">Projects</a>
                 <div class="dropdown-menu bg-light m-0">
                     <a href="/projects#ongoing" class="dropdown-item">Ongoing Projects</a>
                     <a href="/projects#pastprojects" class="dropdown-item">Our Past Projects</a>
-                    
-
                 </div>
             </div>
-            
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle <%= 
-                    ['/feature','/quote','/team','/testimonial'].includes(currentRoute) 
+                <a href="/feature" class="nav-link dropdown-toggle <%= 
+                    ['/feature'].includes(currentRoute) 
                     ? 'active' : '' %>" data-bs-toggle="dropdown">
                     Our Impact</a>
                 <div class="dropdown-menu bg-light m-0">
-                    <a href="/feature" class="dropdown-item">Features</a>
-                    <a href="/quote" class="dropdown-item">Free Quote</a>
-                    <a href="/team" class="dropdown-item">Our Team</a>
-                    <a href="/testimonial" class="dropdown-item">Testimonial</a>
+                    <a href="/feature#overview" class="dropdown-item">Overview</a>
+                    <a href="/feature#reports" class="dropdown-item">Reports</a>
+                    <a href="/feature#stories" class="dropdown-item">Impact Stories</a>
+                    <a href="/feature#measuring" class="dropdown-item">Measuring Impact</a>
+                    <a href="/feature#socialimpact" class="dropdown-item">Social Impact</a>
                 </div>
             </div>
-            <a href="contact.html" class="nav-item nav-link">Contact</a>
+            <div class="nav-item dropdown">
+                <a href="/quote" class="nav-link dropdown-toggle <%= 
+                    ['/quote'].includes(currentRoute) 
+                    ? 'active' : '' %>" data-bs-toggle="dropdown">
+                    Get Involved</a>
+                <div class="dropdown-menu bg-light m-0">
+                    <a href="/quote#donate" class="dropdown-item">Donate</a>
+                    <a href="/quote#sponsorafarmer" class="dropdown-item">Sponsor a farmer</a>
+                    <a href="/quote#partnerwithus" class="dropdown-item">partner With us</a>
+                    <a href="/quote#jobs" class="dropdown-item">Jobs</a>
+                    <a href="/quote#faqs" class="dropdown-item">FAQS</a>
+                </div>
+            </div>
+            <a href="/contact" class="nav-item nav-link">Contact</a>
         </div>
         <a href="" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">Start Analysing<i
                 class="fa fa-arrow-right ms-3"></i></a>
