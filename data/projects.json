@@ -1,0 +1,162 @@
+{
+  "ongoing": [
+    {
+      "title": "Smart Farming Demonstration & Training",
+      "objective": "Equip farmers with climate-smart and digital farming techniques to increase productivity and efficiency.",
+      "activities": [
+        "Training on drip irrigation, greenhouses, and soil conservation.",
+        "Deployment of digital tools: weather apps, soil test kits, and crop disease detection.",
+        "Establishment of demonstration farms for hands-on learning."
+      ],
+      "impact": [
+        "Increased crop yields with reduced inputs.",
+        "Lower production costs and enhanced food security.",
+        "Employment opportunities in agri-tech installation, irrigation, and farm extension."
+      ],
+      "image": "img/service-1.jpg",
+      "category": "second"
+    },
+    {
+      "title": "Agro-Innovation & Technology Projects",
+      "objective": "Modernize agriculture through technology and research-driven solutions.",
+      "activities": [
+        "Solar-powered irrigation systems installation.",
+        "Drone mapping, spraying, and crop surveillance.",
+        "Partnerships with universities for agricultural innovation and training."
+      ],
+      "impact": [
+        "Efficient water use and reduced energy costs.",
+        "Faster pest and disease detection improves yields.",
+        "Youth engagement in agri-tech and renewable energy jobs."
+      ],
+      "image": "img/service-2.jpg",
+      "category": "second"
+    },
+    {
+      "title": "Food Security & Nutrition Programs",
+      "objective": "Ensure stable access to nutritious food and reduce malnutrition in rural communities.",
+      "activities": [
+        "Promotion of drought-resistant and bio-fortified crops.",
+        "Grain banks and storage facilities for surplus food.",
+        "School feeding programs and kitchen garden training."
+      ],
+      "impact": [
+        "Reduced child malnutrition and stunting.",
+        "Strengthened household nutrition and local food availability.",
+        "Institutional markets provide guaranteed income for farmers."
+      ],
+      "image": "img/service-3.jpg",
+      "category": "second"
+    },
+    {
+      "title": "Farmers’ Empowerment & Cooperative Development",
+      "objective": "Strengthen farmer groups for collective action, financial literacy, and market access.",
+      "activities": [
+        "Formation and capacity-building of cooperatives.",
+        "Training in bookkeeping, savings, credit, and governance.",
+        "Linking cooperatives to microfinance, banks, and government programs."
+      ],
+      "impact": [
+        "Higher profits through collective marketing.",
+        "Improved access to credit and government support.",
+        "Stronger rural economies and community cohesion."
+      ],
+      "image": "img/service-4.jpg",
+      "category": "second"
+    },
+    {
+      "title": "Sustainable Livelihoods & Green Community Projects",
+      "objective": "Promote environmental stewardship and climate resilience while generating income.",
+      "activities": [
+        "Agroforestry, tree planting, and organic farming training.",
+        "Composting, soil restoration, and renewable energy solutions.",
+        "Eco-friendly business development and carbon credit participation."
+      ],
+      "impact": [
+        "Healthier soils and long-term climate resilience.",
+        "Cleaner, greener communities and improved public health.",
+        "New green jobs and premium market opportunities for farmers."
+      ],
+      "image": "img/service-5.jpg",
+      "category": "second"
+    },
+    {
+      "title": "Agribusiness & Market Access Initiatives",
+      "objective": "Transform small-scale farming into sustainable agribusinesses.",
+      "activities": [
+        "Training in agribusiness management and value addition.",
+        "Connecting farmers to buyers, processors, exporters, and trade fairs.",
+        "Support for packaging, branding, and product diversification."
+      ],
+      "impact": [
+        "Increased revenue and reduced post-harvest losses.",
+        "Enhanced export competitiveness and local economic growth.",
+        "Jobs in processing, packaging, and transportation."
+      ],
+      "image": "img/service-6.jpg",
+      "category": "second"
+    }
+  ],
+  "past": [
+    {
+      "title": "Climate-Smart Agriculture Pilot",
+      "overview": "Introduced greenhouses, drip irrigation, and soil conservation techniques to 200+ farmers.",
+      "achievements": [
+        "Increased yields by 35% on average.",
+        "Reduced water usage by 40% through drip irrigation.",
+        "Built local capacity through hands-on farmer training sessions."
+      ],
+      "image": "img/service-1.jpg"
+    },
+    {
+      "title": "Solar Irrigation & Agro-Tech Integration",
+      "overview": "Implemented solar-powered irrigation systems and drone technology in pilot farms.",
+      "achievements": [
+        "Enabled year-round farming despite erratic rainfall.",
+        "Trained 150 youth in agri-tech operations.",
+        "Improved pest and disease management, increasing crop quality and market value."
+      ],
+      "image": "img/service-2.jpg"
+    },
+    {
+      "title": "Food Security & Nutrition Programs",
+      "overview": "Established grain banks, promoted bio-fortified crops, and supported school feeding programs.",
+      "achievements": [
+        "Provided over 10,000 households with access to nutritious food.",
+        "Reduced post-harvest losses by 25%.",
+        "Improved school attendance and performance through better nutrition."
+      ],
+      "image": "img/service-3.jpg"
+    },
+    {
+      "title": "Farmers’ Cooperatives & Empowerment",
+      "overview": "Strengthened farmer groups for collective marketing, financial literacy, and access to credit.",
+      "achievements": [
+        "Formed 12 cooperatives with 800+ members.",
+        "Increased collective sales revenue by 50%.",
+        "Expanded access to government subsidies and microfinance programs."
+      ],
+      "image": "img/service-4.jpg"
+    },
+    {
+      "title": "Green Communities & Sustainable Livelihoods",
+      "overview": "Promoted tree planting, organic farming, and renewable energy adoption.",
+      "achievements": [
+        "Planted over 50,000 trees across project sites.",
+        "Supported establishment of 20 eco-friendly small businesses.",
+        "Created new income streams through carbon credits and organic produce."
+      ],
+      "image": "img/service-5.jpg"
+    },
+    {
+      "title": "Agribusiness & Market Access Projects",
+      "overview": "Assisted farmers in value addition, branding, and connecting to buyers and export markets.",
+      "achievements": [
+        "Enabled farmers to process and package products, increasing market prices by 30%.",
+        "Facilitated entry into regional and international markets.",
+        "Created jobs in processing, transportation, and marketing."
+      ],
+      "image": "img/service-6.jpg"
+    }
+  ]
+}

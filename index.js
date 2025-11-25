@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const initiatives = require('./data/initiatives.json');
+const projects = require('./data/projects.json')
 
 // Set EJS as the view engine
 app.set('view engine', 'ejs');
@@ -30,7 +31,7 @@ app.get('/services', (req, res) => {
   res.render('service', { title: "Our Initiatives", initiatives });
 });
 app.get('/projects', (req, res) => {
-  res.render('project', { title: "Our Projects" });
+  res.render('project', { title: "Our Projects", projects });
 });
 app.get('/feature', (req, res) => {
   res.render('feature', { title: "Features" });
