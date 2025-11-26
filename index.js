@@ -4,6 +4,7 @@ const path = require('path');
 const app = express();
 const initiatives = require('./data/initiatives.json');
 const projects = require('./data/projects.json')
+const faqs = require('./data/faqs.json')
 const { Job, OurTeam, ContactUs, Application, OurPartners, MembershipRequest, Publication, Newsletter, AnnualReports, ShortCourseApplication } = require("./models");
 require("dotenv").config();
 
@@ -71,6 +72,10 @@ app.get('/team', async (req, res) => {
     console.error("Failed to load team:", error);
     res.status(500).send("Internal Server Error");
   }
+});
+app.get('/faqs', (req, res) => {
+  // console.log("Faqs:", faqs)
+  res.render('faqs', { title: "FAQS", faqs });
 });
 
 app.get('/testimonial', (req, res) => {
