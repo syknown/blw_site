@@ -77,9 +77,11 @@ app.get('/faqs', (req, res) => {
   // console.log("Faqs:", faqs)
   res.render('faqs', { title: "FAQS", faqs });
 });
-
 app.get('/testimonial', (req, res) => {
   res.render('team', { title: "Testimonial" });
+});
+app.get('/contact', (req, res) => {
+  res.render('contact', { title: "Contact Us" });
 });
 app.get('/404', (req, res) => {
   res.render('404', { title: "404" });
