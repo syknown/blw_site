@@ -455,18 +455,27 @@ router.post("/contact", async (req, res) => {
 // Partners
 router.post("/partners", async (req, res) => {
     try {
-        await OurPartners.create(req.body);
+        console.log("BODY:", req.body);
+
+        await OurPartners.create({
+            name: req.body.name,
+            website: req.body.website,
+            logo: req.body.logo
+        });
+
         res.redirect("/admin");
     } catch (err) {
+        console.error(err);
         res.status(500).send("Internal Server Error");
     }
 });
+
 
 router.post("/partners/delete/:id", async (req, res) => {
     try {
         const partnerId = req.params.id;
         await OurPartners.destroy({ where: { id: partnerId } });
-        res.redirect("/");
+        res.redirect("/admin");
     } catch (err) {
         res.status(500).json({ error: "Internal Server Error" });
     }

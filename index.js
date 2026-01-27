@@ -22,7 +22,8 @@ sequelize
   .catch((err) => {
     console.error("❌ DB Connection Error: ", err);
   });
-
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 // Set EJS as the view engine
 app.set('view engine', 'ejs');
 
@@ -48,6 +49,7 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
   res.render('about', { title: "About Us" });
 });
+
 app.get('/services', (req, res) => {
   // console.log("Initiatives:", initiatives)
   res.render('service', { title: "Our Initiatives", initiatives });
@@ -72,6 +74,18 @@ app.get('/team', async (req, res) => {
     console.error("Failed to load team:", error);
     res.status(500).send("Internal Server Error");
   }
+});
+app.get('/partnership', async (req, res) => {
+  try {
+    const partners = await OurPartners.findAll({ raw: true });
+    console.log('partners', partners)
+    res.render('partnership', { title: "Partnership", partners });
+
+
+  } catch (error) {
+
+  }
+
 });
 app.get('/faqs', (req, res) => {
   // console.log("Faqs:", faqs)
