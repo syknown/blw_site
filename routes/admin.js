@@ -165,7 +165,7 @@ router.post("/annual-reports/delete/:id", async (req, res) => {
     try {
         const reportId = req.params.id;
         await AnnualReports.destroy({ where: { id: reportId } });
-        res.redirect("/");
+        res.redirect("/admin");
     } catch (err) {
         console.error("Error deleting annual report:", err);
         res.status(500).json({ error: "Internal Server Error" });
@@ -433,7 +433,7 @@ router.post("/team/delete/:id", async (req, res) => {
         const deleted = await OurTeam.destroy({ where: { id: memberId } });
         // ////console.log("Deleted rows count: ", deleted);
 
-        res.redirect("/");
+        res.redirect("/admin");
     } catch (err) {
         ////console.error("Error deleting team member:", err);
         res.status(500).json({ error: "Internal Server Error" });
