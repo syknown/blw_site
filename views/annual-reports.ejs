@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <%- include('partials/header') %>
+
+</head>
+
+<body>
+    <%- include('partials/spinner') %>
+        <%- include('partials/topbar') %>
+            <%- include('partials/navbar') %>
+                <!-- Page Header Start -->
+                <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="container text-center py-5">
+                        <h1 class="display-3 text-white mb-4 animated slideInDown">Our Partners</h1>
+                        <nav aria-label="breadcrumb animated slideInDown">
+                            <ol class="breadcrumb justify-content-center mb-0">
+                                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                <li class="breadcrumb-item"><a href="/about">About Us</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Annual Report</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+                <!-- Page Header End -->
+
+
+                <!-- Team Start -->
+                <div class="container-xxl py-5">
+                    <div class="container">
+                        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                            <h2 class="section-title">Partnerships</h2>
+                            <p class="fs-5 fw-bold text-primary">BLSP collaborates with government, private sector
+                                innovators, donors, universities,
+                                and community groups to drive sustainable agriculture.</p>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="row g-4">
+                            <% annualReports.forEach(report=> { %>
+                                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="team-item rounded">
+
+                                        <div class="card h-100 shadow-sm border-0">
+                                            <div class="card-body">
+                                                <h5 class="card-title">
+                                                    <%= report.reportTitle %>
+                                                </h5>
+                                                <p class="card-text">
+                                                    <%= report.description %>
+                                                </p>
+                                                <p class="text-muted mb-2"><strong>Year:</strong>
+                                                    <%= report.reportYear %>
+                                                </p>
+                                                <a href="/uploads<%= report.reportUrl %>" target="_blank"
+                                                    class="btn btn-outline-primary btn-sm">
+                                                    <i class="fas fa-file-pdf"></i> Download PDF
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% }) %>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Team End -->
+
+                <%- include('partials/footer') %>
+</body>
+
+</html>

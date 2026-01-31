@@ -83,6 +83,22 @@ app.get('/partnership', async (req, res) => {
 
 
   } catch (error) {
+    console.error("Failed to load team:", error);
+    res.status(500).send("Internal Server Error");
+
+  }
+
+});
+app.get('/annual-report', async (req, res) => {
+  try {
+    const annualReports = await AnnualReports.findAll({ raw: true });
+    console.log('partners', annualReports)
+    res.render('annual-reports', { title: "Annual reports", annualReports });
+
+
+  } catch (error) {
+    console.error("Failed to load team:", error);
+    res.status(500).send("Internal Server Error");
 
   }
 

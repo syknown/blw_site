@@ -58,6 +58,8 @@ router.get("/", async (req, res) => {
         const annualReports = await AnnualReports.findAll();
         const shortCourseApplicants = await ShortCourseApplication.findAll();
 
+        console.log("annualReports", annualReports)
+
         res.render("admin", { jobs, teamMembers, contacts, partners, applications, membershipRequests, publications, newsletterSubscribers, annualReports, shortCourseApplicants });
     } catch (err) {
         ////console.error("Error fetching admin data:", err);
