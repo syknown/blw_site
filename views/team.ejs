@@ -23,15 +23,19 @@
 
             .team-img {
                 width: 100%;
-                height: 240px;
+                height: 180px;
+                /* 👈 SMALLER */
                 overflow: hidden;
+                border-radius: 8px;
             }
+
             .team-img img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                object-position: top center;
-                /* 🔥 FACE SAVER */
+                object-position: 50% 20%;
+                /* 🔥 THIS IS THE KEY */
+                display: block;
             }
         </style>
 
