@@ -4,6 +4,35 @@
 <head>
     <meta charset="utf-8">
     <%- include('partials/header') %>
+        <style>
+            .team-description {
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                /* number of lines */
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                line-height: 1.5;
+            }
+
+            .team-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 30px;
+            }
+
+            .team-img {
+                width: 100%;
+                height: 240px;
+                overflow: hidden;
+            }
+
+            .team-img img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        </style>
 
 </head>
 
@@ -25,8 +54,6 @@
                     </div>
                 </div>
                 <!-- Page Header End -->
-
-
                 <!-- Team Start -->
                 <div class="container-xxl py-5">
                     <div class="container">
@@ -35,56 +62,48 @@
                             <h1 class="display-5 mb-5">Dedicated & Experienced Team Members</h1>
                         </div>
                         <div class="row g-4">
-                            <% team.forEach(member=> { %>
-                                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                                    <div class="team-item rounded">
-                                        <img class="img-fluid" src="<%= member.imageUrl || 'img/default-team.jpg' %>"
-                                            alt="">
+                            <div class="team-grid">
+                                <% team.forEach(member=> { %>
+
+                                    <div class="team-card">
+                                        <div class="team-img">
+                                            <img src="<%= member.imageUrl %>" alt="<%= member.fullName %>">
+                                        </div>
+
                                         <div class="team-text">
-                                            <h4 class="mb-0">
+                                            <h4>
                                                 <%= member.fullName %>
                                             </h4>
-                                            <p class="text-primary">
-                                                <%= member.role %>
+
+                                            <p class="team-role">
+                                                <%= member.role.split(',').join(' • ') %>
+                                             </p>
+
+                                            <p class="team-description">
+                                                <%= member.description %>
                                             </p>
-                                            <div class="team-social d-flex">
-
+                                            <div class="team-social">
                                                 <% if (member.facebook) { %>
-                                                    <a class="btn btn-square rounded-circle me-2"
-                                                        href="<%= member.facebook %>">
-                                                        <i class="fab fa-facebook-f"></i></a>
-                                                    <% } %>
-
-                                                        <% if (member.twitter) { %>
-                                                            <a class="btn btn-square rounded-circle me-2"
-                                                                href="<%= member.twitter %>">
-                                                                <i class="fab fa-twitter"></i></a>
-                                                            <% } %>
-
-                                                                <% if (member.linkedin) { %>
-                                                                    <a class="btn btn-square rounded-circle me-2"
-                                                                        href="<%= member.linkedin %>">
-                                                                        <i class="fab fa-linkedin"></i></a>
-                                                                    <% } %>
-
-                                                                        <% if (member.googlePlus) { %>
-                                                                            <a class="btn btn-square rounded-circle me-2"
-                                                                                href="<%= member.googlePlus %>">
-                                                                                <i class="fab fa-google-plus-g"></i></a>
-                                                                            <% } %>
-
+                                                    <a href="<%= member.facebook %>"><i class="fab fa-facebook-f"></i></a>
+                                                <% } %>
+                                                <% if (member.twitter) { %>
+                                                    <a href="<%= member.twitter %>"><i class="fab fa-twitter"></i></a>
+                                                <% } %>
+                                                <% if (member.linkedin) { %>
+                                                    <a href="<%= member.linkedin %>"><i class="fab fa-linkedin"></i></a>
+                                                <% } %>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <% }) %>
-                        </div>
 
+                                <% }) %>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!-- Team End -->
-
                 <%- include('partials/footer') %>
+            <!-- </> -->
+        <!-- </> -->
+    <!-- </> -->
 </body>
-
 </html>

@@ -58,8 +58,6 @@ router.get("/", async (req, res) => {
         const annualReports = await AnnualReports.findAll();
         const shortCourseApplicants = await ShortCourseApplication.findAll();
 
-        console.log("annualReports", annualReports)
-
         res.render("admin", { jobs, teamMembers, contacts, partners, applications, membershipRequests, publications, newsletterSubscribers, annualReports, shortCourseApplicants });
     } catch (err) {
         ////console.error("Error fetching admin data:", err);
@@ -79,8 +77,7 @@ router.post(
             const academicFilesPaths = req.files.academicFiles
                 ? req.files.academicFiles.map(f => f.path)
                 : [];
-
-            // Save to database
+            //  Save to database
             const application = await ShortCourseApplication.create({
                 firstName: req.body.firstName,
                 middleName: req.body.middleName,
@@ -105,7 +102,6 @@ router.post(
                 dataConsent: req.body.dataConsent === 'on' ? true : false,
                 signature: req.body.signature
             });
-
             // send email notifications here to troycityEmail and applicant email 
             const troycityEmail = "info@troycityafrica.com"
             const mailOptions = {
@@ -134,7 +130,6 @@ router.post(
                     console.log("Email sent:", info.response);
                 }
             });
-
             res.json({ success: true, message: 'Application submitted successfully!', application });
         } catch (err) {
             console.error(err);
@@ -284,9 +279,6 @@ router.post("/publications/edit/:id", async (req, res) => {
         res.status(500).send("Internal Server Error");
     }
 });
-
-
-
 router.get("/api/publications/list", async (req, res) => {
     try {
         const publications = await Publication.findAll();
@@ -340,15 +332,6 @@ router.post("/subscribe", async (req, res) => {
         res.status(500).json({ error: "Internal Server Error" });
     }
 });
-// router.get("/api/newsletter", async (req, res) => {
-//     try {
-//         const subscribers = await Newsletter.findAll();
-//         res.json(subscribers);
-//     } catch (err) {
-//         ////console.error("Error fetching newsletter subscribers:", err);
-//         res.status(500).json({ error: "Internal Server Error" });
-//     }
-// });
 
 router.post("/jobs/delete/:id", async (req, res) => {
     try {
@@ -368,13 +351,9 @@ router.post("/jobs/delete/:id", async (req, res) => {
 router.post("/team", upload.single("image"), async (req, res) => {
     try {
         console.log("Received team member data:", req.body, req.file);
-        const { fullName, role } = req.body;
+        const { fullName, role, description } = req.body;
         const imageUrl = req.file ? `/uploads/${req.file.filename}` : null;
-        await OurTeam.create({ fullName, role, imageUrl });
-        res.redirect("/admin");
-
-        // await db.Team.create({ fullName, role, imageUrl });
-        console.log("Team member created successfully");
+        await OurTeam.create({ fullName, role, description, imageUrl });
         res.redirect("/admin");
     } catch (err) {
         ////console.error("Error creating team member:", err);

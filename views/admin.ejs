@@ -175,6 +175,7 @@
 
                     <input class="form-control mb-2" name="fullName" placeholder="Full Name" required />
                     <input class="form-control mb-2" name="role" placeholder="Role" required />
+                    <textarea class="form-control mb-2" name="description" placeholder="User Profile"></textarea>
 
                     <!-- Replace URL input with file upload -->
                     <label class="form-label">Profile Image</label>
@@ -189,6 +190,7 @@
                         <tr>
                             <th>Name</th>
                             <th>Role</th>
+                            <th>User Profile</th>
                             <th>Image</th>
                             <th>Actions</th>
                         </tr>
@@ -202,6 +204,7 @@
                                 <td>
                                     <%= m.role %>
                                 </td>
+                                <td><%= m.description %></td>   
                                 <td><img src="<%= m.imageUrl %>" style="height:40px; border-radius:4px;" /></td>
                                 <td>
                                     <!-- Edit Button -->

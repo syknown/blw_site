@@ -1,6 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
     const OurTeam = sequelize.define('OurTeam', {
         fullName: { type: DataTypes.STRING, allowNull: false },
+        description: { type: DataTypes.TEXT, allowNull: true },
         role: { type: DataTypes.STRING, allowNull: false },
         imageUrl: { type: DataTypes.STRING, allowNull: true },
         facebook: { type: DataTypes.STRING, allowNull: true },
