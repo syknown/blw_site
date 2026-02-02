@@ -362,8 +362,8 @@ router.post("/team", upload.single("image"), async (req, res) => {
 });
 
 router.post("/team/edit/:id", upload.single("image"), async (req, res) => {
-    const { fullName, role } = req.body;
-    const updates = { fullName, role };
+    const { fullName, role, description } = req.body;
+    const updates = { fullName, role, description };
 
     if (req.file) updates.imageUrl = `/team/${req.file.filename}`;
 
