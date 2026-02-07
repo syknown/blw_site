@@ -95,31 +95,29 @@
 
                                             <button
                                                 type="button"
-                                                class="read-more read-more-btn btn btn-link p-0"
+                                                class="btn btn-sm btn-outline-primary read-more-btn"
                                                 data-name="<%= member.fullName %>"
                                                 data-role="<%= member.role %>"
                                                 data-description="<%- member.description.replace(/\n/g, ' \\n') %>">
                                                     Read more
-                                                    </button>
-
-
-                                                    <div class="team-social">
-                                                        <% if (member.facebook) { %>
-                                                            <a href="<%= member.facebook %>"><i
-                                                                    class="fab fa-facebook-f"></i></a>
+                                            </button>
+                                            <div class="team-social">
+                                                <% if (member.facebook) { %>
+                                                <a href="<%= member.facebook %>">
+                                                    <i class="fab fa-facebook-f"></i></a>
+                                                    <% } %>
+                                                    <% if (member.twitter) { %>
+                                                        <a href="<%= member.twitter %>">
+                                                            <i class="fab fa-twitter"></i></a>
                                                             <% } %>
-                                                                <% if (member.twitter) { %>
-                                                                    <a href="<%= member.twitter %>"><i
-                                                                            class="fab fa-twitter"></i></a>
-                                                                    <% } %>
-                                                                        <% if (member.linkedin) { %>
-                                                                            <a href="<%= member.linkedin %>"><i
-                                                                                    class="fab fa-linkedin"></i></a>
-                                                                            <% } %>
-                                                    </div>
+                                                            <% if (member.linkedin) { %>
+                                                                <a href="<%= member.linkedin %>">
+                                                            <i class="fab fa-linkedin"></i>
+                                                        </a>
+                                                <% } %>
+                                            </div>
                                         </div>
                                     </div>
-
                                     <% }) %>
                             </div>
                         </div>
