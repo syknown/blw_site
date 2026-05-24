@@ -1,16 +1,16 @@
 // server.js
+require("dotenv").config();
 const express = require('express');
 const path = require('path');
+const session = require('express-session');
 const app = express();
 const initiatives = require('./data/initiatives.json');
 const projects = require('./data/projects.json')
 const faqs = require('./data/faqs.json')
-const { Job, OurTeam, ContactUs, Application, OurPartners, MembershipRequest, Publication, Newsletter, AnnualReports, ShortCourseApplication } = require("./models");
-require("dotenv").config();
+const { OurTeam, OurPartners, AnnualReports } = require("./models");
 
 var adminRouter = require('./routes/admin')
 const { sequelize } = require("./models");
-// sequelize.sync().then(() => console.log("✅ DB Synced"));
 sequelize
   .sync({ alter: true })
   .then(() => console.log("✅ DB Synced with Alter"));
@@ -24,6 +24,12 @@ sequelize
   });
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'blsp-admin-fallback-secret',
+  resave: false,
+  saveUninitialized: false,
+  cookie: { maxAge: 8 * 60 * 60 * 1000 } // 8 hours
+}));
 // Set EJS as the view engine
 app.set('view engine', 'ejs');
 
@@ -92,7 +98,7 @@ app.get('/partnership', async (req, res) => {
 app.get('/annual-report', async (req, res) => {
   try {
     const annualReports = await AnnualReports.findAll({ raw: true });
-    console.log('partners', annualReports)
+    console.log('annualReports', annualReports)
     res.render('annual-reports', { title: "Annual reports", annualReports });
   } catch (error) {
     console.error("Failed to load team:", error);
@@ -106,7 +112,7 @@ app.get('/faqs', (req, res) => {
   res.render('faqs', { title: "FAQS", faqs });
 });
 app.get('/testimonial', (req, res) => {
-  res.render('team', { title: "Testimonial" });
+  res.render('testimonial', { title: "Testimonial" });
 });
 app.get('/contact', (req, res) => {
   res.render('contact', { title: "Contact Us" });

@@ -6,17 +6,54 @@ const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
 
+// ── Auth middleware ─────────────────────────────────────────────────────────
+const requireAuth = (req, res, next) => {
+    if (req.session && req.session.isAdmin) return next();
+    res.redirect('/admin/login');
+};
+
+// Login page (public)
+router.get('/login', (req, res) => {
+    if (req.session && req.session.isAdmin) return res.redirect('/admin');
+    res.render('login', { error: null });
+});
+
+router.post('/login', (req, res) => {
+    const { username, password } = req.body;
+    if (username === process.env.ADMIN_USERNAME && password === process.env.ADMIN_PASSWORD) {
+        req.session.isAdmin = true;
+        req.session.save((err) => {
+            if (err) {
+                console.error('Session save error:', err);
+                return res.render('login', { error: 'Session error, please try again.' });
+            }
+            res.redirect('/admin');
+        });
+        return;
+    }
+    res.render('login', { error: 'Invalid username or password.' });
+});
+
+router.post('/logout', (req, res) => {
+    req.session.destroy();
+    res.redirect('/admin/login');
+});
+
+// All routes below this line require authentication
+router.use(requireAuth);
+// ────────────────────────────────────────────────────────────────────────────
+
 const uploadDir = path.join(__dirname, "..", "public/uploads");
 // email configurations 
-const EMAIL_HOST = process.env.EMAIL_HOST;
+const EMAIL_HOST = process.env.MAIL_HOST;
 const EMAIL_PORT = process.env.EMAIL_PORT;
 const EMAIL_USER = process.env.EMAIL_USER;
 const EMAIL_PASS = process.env.EMAIL_PASS;
 const EMAIL_SECURE = process.env.EMAIL_SECURE;
-transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransport({
     host: EMAIL_HOST,
     port: EMAIL_PORT,
-    secure: EMAIL_SECURE,
+    secure: EMAIL_SECURE === 'true',
     auth: {
         user: EMAIL_USER,
         pass: EMAIL_PASS,
@@ -56,9 +93,8 @@ router.get("/", async (req, res) => {
         const publications = await Publication.findAll();
         const newsletterSubscribers = await Newsletter.findAll();
         const annualReports = await AnnualReports.findAll();
-        const shortCourseApplicants = await ShortCourseApplication.findAll();
 
-        res.render("admin", { jobs, teamMembers, contacts, partners, applications, membershipRequests, publications, newsletterSubscribers, annualReports, shortCourseApplicants });
+        res.render("admin", { jobs, teamMembers, contacts, partners, applications, membershipRequests, publications, newsletterSubscribers, annualReports });
     } catch (err) {
         ////console.error("Error fetching admin data:", err);
         res.status(500).send("Internal Server Error");
@@ -174,7 +210,7 @@ router.post("/annual-reports/edit/:id", upload.single("reportFile"), async (req,
         const updates = { reportTitle, reportYear, description };
 
         if (req.file) {
-            updates.reportUrl = `/reports/${req.file.filename}`;
+            updates.reportUrl = `/${req.file.filename}`;
         }
 
         await AnnualReports.update(updates, { where: { id: req.params.id } });
@@ -273,7 +309,7 @@ router.post("/publications/edit/:id", async (req, res) => {
             { title, description, category, buttonLink, postedDate },
             { where: { id: req.params.id } }
         );
-        res.redirect("/");
+        res.redirect("/admin");
     } catch (err) {
         console.error("Error updating publication:", err);
         res.status(500).send("Internal Server Error");
@@ -340,7 +376,7 @@ router.post("/jobs/delete/:id", async (req, res) => {
         const deleted = await Job.destroy({ where: { id: jobId } });
         // ////console.log("Deleted rows count: ", deleted);
 
-        res.redirect("/");
+        res.redirect("/admin");
     } catch (err) {
         ////console.error("Error deleting job:", err);
         res.status(500).json({ error: "Internal Server Error" });
@@ -362,14 +398,18 @@ router.post("/team", upload.single("image"), async (req, res) => {
 });
 
 router.post("/team/edit/:id", upload.single("image"), async (req, res) => {
-    const { fullName, role, description } = req.body;
-    const updates = { fullName, role, description };
+    try {
+        const { fullName, role, description } = req.body;
+        const updates = { fullName, role, description };
 
-    if (req.file) updates.imageUrl = `/team/${req.file.filename}`;
+        if (req.file) updates.imageUrl = `/uploads/${req.file.filename}`;
 
-    await OurTeam.update(updates, { where: { id: req.params.id } });
-    console.log("Team member updated successfully");
-    res.redirect("/admin#team");
+        await OurTeam.update(updates, { where: { id: req.params.id } });
+        res.redirect("/admin#team");
+    } catch (err) {
+        console.error("Error updating team member:", err);
+        res.status(500).send("Internal Server Error");
+    }
 });
 
 // routes/index.js or wherever
